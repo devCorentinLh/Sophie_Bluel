@@ -1,14 +1,14 @@
-# Portfolio-architecte-sophie-bluel
+# Portfolio de l'Architecte Sophie Bluel
 
 
-## Lancement le serveure
+## Lancement le serveur
 `cd Backend`
- `npm install`  
- `npm start`
+`npm install`  
+`npm start`
 
 
 
-Compte de test pour Sophie Bluel
+Compte de Sophie Bluel
 
 ```
 email: sophie.bluel@test.tld
