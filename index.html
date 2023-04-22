@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Sophie Bluel - Architecte d'intérieur</title>
+		<link rel="icon" type="image/x-icon" href="./assets/icons/FAV.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/f266b52627.js" crossorigin="anonymous"></script>
+		<meta name="description" content="">
+		<link rel="stylesheet" href="./assets/style.css">
+	</head>
+
+	<body>
+
+		<div id="modifer">
+		</div>
+
+<!--  PAGE  MODALE  -->
+
+		<aside id="modal" class="modal" aria-hidden="true" style="display:none">
+
+			<div class="modal_trigger"></div>
+			<div class="modal_container js_modal_stop">
+
+				<button id="model_fermer">x</button>
+				<section class="model_body">
+					<i class="fa-solid fa-arrows-up-down-left-right "></i>
+					<h2 class="model_titre">Galerie photo</h2>
+					<div id="model_gallery"></div>
+					<div class="btn">
+						<button id="model_ajoute" class="model_ajoute">Ajouter une photo</button>
+						<button class="model_suprimer">Supprimer la galerie</button>
+					</div>
+				</section>
+			</div>
+		</aside>
+
+<!--  PAGE MODALE AJOUT DE PHOTO  -->
+
+		<form name="form_ajout" method="post" action="#" id="modal_ajout" class="modal" aria-hidden="true"
+			style="display:none" enctype="multipart/form-data">
+
+			<div class="modal_trigger"></div>
+			<div class="modal_container js_modal_stop">
+
+				<button id="model_fermer_ajouter">x</button>
+				<i id="left" class="fa-sharp fa-solid fa-arrow-left"></i>
+
+				<section class="model_body">
+					<h2 class="model_titre">Ajout photo</h2>
+					<div id="model_gallery_ajout">
+
+						<div class="model_ajout">
+							<div id="image_telecharger_images" style="display:none">
+								<div id="image_telecharger"></div>
+							</div>
+							<div id="model_ajout_container" style="display:contents">
+							
+								<img class="photo" src="./assets/images/photo.PNG" alt="image">
+								<input name="image" type="file" id="img_input" accept="image/png , image/jpg  "
+									class="input_img_btn">
+								<button id="ajout" class="model_ajoute ajout">+ Ajouter photo</button>
+
+								<p>jpg, png : 4mo max</p>
+							</div>
+						</div>
+
+						<label id="msg_err"></label>
+
+						<div class="input_modal_ajout">
+							<label>Titre</label>
+							<input name="title" id="input_model" class="input_model">
+						</div>
+
+						<div class="input_modal_ajout">
+
+							<label>Catégorie</label>
+
+							<select name="category" id="categorie" class="input_modal_ajout_choix">
+								<option value="Objets">Objets</option>
+								<option value="Appartements">Appartements</option>
+								<option value="Hotels & restaurants">Hotels & restaurants</option>
+							</select>
+
+						</div>
+					</div>
+
+					<div class="modal_ajout_valider">
+						<button type="submit" id="btn_valider" class="model_ajoute valider">Valider</button>
+					</div>
+				</section>
+			</div>
+		</form>
+
+<!-- HEADER + NAV  -->
+
+		<header>
+			<a href="index.html">
+				<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="#portfolio_titre">projets</a></li>
+					<li><a href="#contact">contact</a></li>
+					<li><a id="login" href="./assets/pages/logIn.html">login</a></li>
+					<li><i class="fa-brands fa-instagram"></i></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+
+<!--  INTRODUCTION // PRESENTATION -->	
+
+			<div id="introduction">
+				<figure id="introduction_photo">
+					<img src="./assets/images/sophie-bluel.png" alt="poto de sophie-bluel ">
+				</figure>
+				<article id="introduction_article">
+					<h2>Designer d'espace</h2>
+					<div class="paragraphe ">
+						<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la
+							livraison finale du chantier.</p>
+						<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+							couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
+							chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+						<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
+							décorateur(trice)</p>
+					</div>
+				</article>
+			</div>
+
+<!--  PORTFOLIO VIA API -->	
+
+			<section id="portfolio">
+				
+				<div id="portfolio_modifier">
+					<h2 id="portfolio_titre">Mes Projets</h2>
+				</div>
+
+				<div id="btn">
+					<button id="btn_tous">Tous</button>
+				</div>
+
+				<div class="gallery" id="gallery">
+				</div>
+
+			</section>
+
+<!--  FORMULAIRE DE CONTACT -->	
+
+			<section id="contact">
+				<h2>Contact</h2>
+				<p>Vous avez un projet ? Discutons-en !</p>
+				<form action="#" method="post">
+					<label for="name">Nom</label>
+					<input type="text" name="name" id="name">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" cols="30" rows="10"></textarea>
+					<input type="submit" value="Envoyer">
+				</form>
+			</section>
+		</main>
+
+<!--  FOOTER -->
+
+		<footer>
+			<nav>
+				<ul>
+					<li>Mentions Légales</li>
+				</ul>
+			</nav>
+		</footer>
+
+<!--  SCRIPT JAVASCRIPT -->	
+
+		<script src="./assets/javaScript/index.js"></script>
+		
+	</body>
+
+</html>
